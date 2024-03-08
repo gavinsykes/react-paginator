@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "target": "ESNext",                  // Use the latest ECMAScript version
     "module": "ESNext",                  // Use ES modules
     "outDir": "./dist",                  // Output directory for transpiled code
-    "rootDir": "./dev/src",                  // Source code directory
+    "rootDir": "./src",                  // Source code directory
     "strict": true,                      // Enable strict type checking
     "esModuleInterop": true,             // Enable compatibility with CommonJS modules
     "skipLibCheck": true,                // Skip type checking of declaration files
@@ -18,10 +21,10 @@
   },
   "typedocOptions": {
     "out": "./docs",
-    "entryPoints": ["./dev/src"],
+    "entryPoints": ["./src"],
     "exclude": ["node_modules"],
     "theme": "default"
   },
-  "include": ["dev/src/**/*.ts", "dev/src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
 }
