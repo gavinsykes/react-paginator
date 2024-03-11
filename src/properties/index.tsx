@@ -1,9 +1,13 @@
 import { CSSProperties } from "react";
 
-export const commonPreviousNextStyles: (flexReverse: boolean) => CSSProperties = (flexReverse = false) => ({
+type commonPreviousNextStylesParams = ({
+  flexReverse: boolean;
+}) | void;
+
+export const commonPreviousNextStyles: (params: commonPreviousNextStylesParams) => CSSProperties = (params) => ({
   alignItems: 'stretch',
   display: 'flex',
-  flexDirection: flexReverse ? 'row-reverse' : 'row',
+  flexDirection: params?.flexReverse ? 'row-reverse' : 'row',
   flexWrap: 'wrap',
   overflow: 'hidden',
   rowGap: '9999px'

@@ -1,4 +1,5 @@
 import { usePaginatorContext } from "@/contexts/PaginatorContext";
+import { commonPreviousNextAnchorStyles, commonPreviousNextStyles } from "@/properties";
 import { CommonPreviousNextPagesProps } from "@/types";
 import { MouseEventHandler } from "react";
 
@@ -11,9 +12,9 @@ export default function NextPages({ maximum = 5, render, ...anchorProps }: Commo
     setToIndex(anchor)
   }
   return (
-    <div style={{ display: 'flex', flexFlow: 'row wrap', overflow: 'hidden' }}>
+    <div style={commonPreviousNextStyles()}>
       <div></div>
-      {anchors.map(anchor => <a key={anchor} onClick={onClick(anchor)} {...anchorProps}>
+      {anchors.map(anchor => <a key={anchor} onClick={onClick(anchor)} style={commonPreviousNextAnchorStyles} {...anchorProps}>
         {render ? render(anchor + pageNumberOffset) : anchor + pageNumberOffset}
       </a>)} 
     </div>
