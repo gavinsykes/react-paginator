@@ -8,6 +8,7 @@ import NextPages from "./NextPages";
 import CurrentPage from "./CurrentPage";
 import { PaginatorContextProvider } from "@/contexts/PaginatorContext";
 import { PaginatorProps } from "@/types";
+import SetToIndex from "./SetToIndex";
 
 export function Paginator({ allowNumberNavigation = true, children, pageNumberOffset = 0, onPageChange, totalPages, ...divProps }: PaginatorProps) {
   if (totalPages < 1 || !Number.isInteger(totalPages)) throw new Error("The paginator component's totalPages property must be an integer greater than 0.");
@@ -59,3 +60,4 @@ Paginator.SetToFirst = SetToFirst;
 Paginator.SetToLast = SetToLast;
 Paginator.SetToPrevious = SetToPrevious;
 Paginator.SetToNext = SetToNext;
+Paginator.SetToIndex = SetToIndex;
