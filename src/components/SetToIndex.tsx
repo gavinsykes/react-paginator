@@ -1,6 +1,5 @@
 import { usePaginatorContext } from "@/contexts/PaginatorContext";
 import { ButtonHTMLAttributes, DetailedHTMLProps, Dispatch, HTMLProps, KeyboardEventHandler, MouseEventHandler, ReactNode, SetStateAction, createContext, useContext, useRef, useState } from "react";
-import CurrentPage from "./CurrentPage";
 
 interface SetToIndexProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
