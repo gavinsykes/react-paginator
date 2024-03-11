@@ -1,23 +1,7 @@
 import { usePaginatorContext } from "@/contexts/PaginatorContext";
-import { ButtonHTMLAttributes, DetailedHTMLProps, Dispatch, HTMLProps, KeyboardEventHandler, MouseEventHandler, ReactNode, SetStateAction, createContext, useContext, useRef, useState } from "react";
-
-interface SetToIndexProps extends HTMLProps<HTMLDivElement> {
-  children?: ReactNode;
-}
-
-interface SetToIndexContextProps {
-  setTargetIndex: Dispatch<SetStateAction<SetToIndexContextProps['targetIndex']>>;
-  setToIndex: Dispatch<SetStateAction<number>>;
-  targetIndex: number | undefined;
-  totalPages: number;
-}
-
-const SetToIndexContext = createContext<SetToIndexContextProps>(null!);
-
-interface SetToIndexContextProviderProps extends SetToIndexContextProps {
-  children: ReactNode;
-}
-const SetToIndexContextProvider = ({ children, setTargetIndex, setToIndex, targetIndex, totalPages }: SetToIndexContextProviderProps) => <SetToIndexContext.Provider value={{ setTargetIndex, setToIndex, targetIndex, totalPages }}>{children}</SetToIndexContext.Provider>
+import { SetToIndexContextProvider, useSetToIndexContext } from "@/contexts/SetToIndexContext";
+import { SetToIndexProps, SetToIndexInputProps, SetToIndexSubmitProps } from "@/types";
+import { KeyboardEventHandler, MouseEventHandler, useRef, useState } from "react";
 
 export default function SetToIndex({ children, ...divProps }: SetToIndexProps) {
   const { setToIndex, totalPages } = usePaginatorContext();
@@ -30,10 +14,6 @@ export default function SetToIndex({ children, ...divProps }: SetToIndexProps) {
     </div>
   );
 }
-
-const useSetToIndexContext = () => useContext(SetToIndexContext);
-
-interface SetToIndexInputProps extends HTMLProps<HTMLInputElement> {}
 
 function SetToIndexInput({ ...inputProps }: SetToIndexInputProps) {
   const { pageNumberOffset, setToIndex, totalPages } = usePaginatorContext();
@@ -57,10 +37,6 @@ function SetToIndexInput({ ...inputProps }: SetToIndexInputProps) {
       max={pageNumberOffset + totalPages}
     />
   );
-}
-
-interface SetToIndexSubmitProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  children?: ReactNode;
 }
 
 function SetToIndexSubmit({ children, ...buttonProps }: SetToIndexSubmitProps) {

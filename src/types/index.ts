@@ -39,3 +39,24 @@ export interface CommonPreviousNextPagesProps extends DetailedHTMLProps<AnchorHT
   maximum?: number;
   render?: (index: number) => ReactNode;
 }
+
+export interface SetToIndexContextProps {
+  setTargetIndex: Dispatch<SetStateAction<SetToIndexContextProps['targetIndex']>>;
+  setToIndex: Dispatch<SetStateAction<number>>;
+  targetIndex: number | undefined;
+  totalPages: number;
+}
+
+export interface SetToIndexContextProviderProps extends SetToIndexContextProps {
+  children: ReactNode;
+}
+
+export interface SetToIndexProps extends HTMLProps<HTMLDivElement> {
+  children?: ReactNode;
+}
+
+export interface SetToIndexInputProps extends HTMLProps<HTMLInputElement> {}
+
+export interface SetToIndexSubmitProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  children?: ReactNode;
+}
