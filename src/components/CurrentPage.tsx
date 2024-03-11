@@ -7,5 +7,5 @@ interface CurrentPageProps extends HTMLProps<HTMLDivElement> {
 
 export default function CurrentPage({ render, ...divProps }: CurrentPageProps) {
   const { currentPageIndex, pageNumberOffset } = usePaginatorContext();
-  return <div {...divProps}>{render ? render(currentPageIndex + pageNumberOffset) : currentPageIndex + pageNumberOffset}</div>
+  return <div {...divProps}>{render ? render(currentPageIndex + pageNumberOffset + 1) : currentPageIndex + pageNumberOffset + 1}</div>
 }

@@ -1,5 +1,7 @@
 import { CSSProperties } from "react";
 
+export const commonDefaultMaximumPreviousNext = 5;
+
 type commonPreviousNextStylesParams = ({
   flexReverse: boolean;
 }) | void;

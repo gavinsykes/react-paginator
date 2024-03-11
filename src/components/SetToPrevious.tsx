@@ -6,6 +6,6 @@ export default function SetToPrevious({ children, ...anchorProps }: PaginatorAnc
   if (isFirst) return null;
   const onClick = () => setToPrevious()
   return (
-    <a onClick={onClick} {...anchorProps}>{children ?? '‹'}</a>
+    <a onClick={onClick} unselectable="on" {...anchorProps}>{children ?? '‹'}</a>
   );
 }

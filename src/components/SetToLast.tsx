@@ -5,5 +5,5 @@ export default function SetToLast({ children, ...anchorProps }: PaginatorAnchorP
   const { isLast, setToLast } = usePaginatorContext();
   if (isLast) return null;
   const onClick = () => setToLast()
-  return <a onClick={onClick} {...anchorProps}>{children ?? '»'}</a>
+  return <a onClick={onClick} unselectable="on" {...anchorProps}>{children ?? '»'}</a>
 }

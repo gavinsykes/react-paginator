@@ -5,5 +5,5 @@ export default function SetToFirst({ children, ...anchorProps }: PaginatorAnchor
   const { isFirst, setToFirst } = usePaginatorContext();
   if (isFirst) return null;
   const onClick = () => setToFirst()
-  return <a onClick={onClick} {...anchorProps}>{children ?? '«'}</a>
+  return <a onClick={onClick} unselectable="on" {...anchorProps}>{children ?? '«'}</a>
 }

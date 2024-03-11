@@ -6,6 +6,6 @@ export default function SetToNext({ children, ...anchorProps }: PaginatorAnchorP
   if (isLast) return null;
   const onClick = () => setToNext()
   return (
-    <a onClick={onClick} {...anchorProps}>{children ?? '›'}</a>
+    <a onClick={onClick} unselectable="on" {...anchorProps}>{children ?? '›'}</a>
   );
 }
