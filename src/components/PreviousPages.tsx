@@ -1,11 +1,12 @@
 import { usePaginatorContext } from "@/contexts/PaginatorContext";
 import { CommonPreviousNextPagesProps } from "@/types";
+import { MouseEventHandler } from "react";
 
 export default function PreviousPages({ maximum = 5, render, ...anchorProps }: CommonPreviousNextPagesProps) {
   const { allowNumberNavigation, currentPageIndex, isFirst, pageNumberOffset, setToIndex } = usePaginatorContext();
   if (isFirst) return null;
   const anchors = Array.from({ length: currentPageIndex }, (_,i) => i).slice(-maximum).reverse();
-  const onClick = (anchor: number) => () => {
+  const onClick: (anchor: number) => MouseEventHandler<HTMLAnchorElement> = (anchor: number) => () => {
     if (!allowNumberNavigation) return;
     setToIndex(anchor);
   }
