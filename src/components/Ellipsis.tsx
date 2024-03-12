@@ -1,5 +1,5 @@
 export default function Ellipsis() {
   return (
-    <div></div>
+    <div>...</div>
   );
 }
