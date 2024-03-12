@@ -7,8 +7,9 @@ export default defineConfig({
   plugins: [react(),tsconfigPaths()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/main.ts'),
-      formats: ['es']
+      entry: resolve(__dirname, 'src/index.ts'),
+      formats: ['es'],
+      name: 'React Paginator'
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
