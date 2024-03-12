@@ -44,7 +44,10 @@ export function Paginator({ allowNumberNavigation = true, children, pageNumberOf
       setToPrevious={setToPrevious}
       totalPages={totalPages}
     >
-      <div style={{ display: 'flex', flexFlow: 'row nowrap' }} {...divProps}>
+      <div
+        {...divProps}
+        style={{ display: 'flex', flexFlow: 'row nowrap', ...divProps.style }}
+      >
         {children}
       </div>
     </PaginatorContextProvider>
