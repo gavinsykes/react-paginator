@@ -9,7 +9,7 @@
     ],
     "ignorePatterns": [
         "**/*.json",
-        "**/*.config.{js|ts}"
+        "**/*.config.ts"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
