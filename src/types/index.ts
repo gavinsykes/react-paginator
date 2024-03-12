@@ -38,6 +38,7 @@ export interface PaginatorButtonProps extends DetailedHTMLProps<ButtonHTMLAttrib
 export interface CommonPreviousNextPagesProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   maximum?: number;
   render?: (index: number) => ReactNode;
+  showEllipsis?: boolean;
 }
 
 export interface SetToIndexContextProps {
