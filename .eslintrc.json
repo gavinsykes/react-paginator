@@ -11,7 +11,8 @@
     "ignorePatterns": [
         "**/*.json",
         "**/*.config.ts",
-        "**/*.css"
+        "**/*.css",
+        "**/*.mdx"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
