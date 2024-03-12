@@ -11,6 +11,7 @@
     "ignorePatterns": [
         "**/*.json",
         "**/*.config.ts",
+        "**/*.avif",
         "**/*.css",
         "**/*.mdx",
         "**/*.png",
