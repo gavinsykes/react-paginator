@@ -1,7 +1,9 @@
 {
   "name": "react-paginator",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "module": "./dist/react-paginator.js",
   "exports": {
     ".": {
@@ -21,7 +23,14 @@
     "@storybook/test": "^8.0.0",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.34.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
