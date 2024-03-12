@@ -36,6 +36,7 @@ const meta = {
     setToLastArgs: {
       display: true
     },
+    totalPages: 10
   },
   component: Paginator,
   parameters: {
