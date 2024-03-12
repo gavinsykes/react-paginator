@@ -12,7 +12,9 @@
         "**/*.json",
         "**/*.config.ts",
         "**/*.css",
-        "**/*.mdx"
+        "**/*.mdx",
+        "**/*.png",
+        "**/*.svg"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
