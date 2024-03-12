@@ -5,11 +5,13 @@
     },
     "extends": [
         "standard-with-typescript",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:storybook/recommended"
     ],
     "ignorePatterns": [
         "**/*.json",
-        "**/*.config.ts"
+        "**/*.config.ts",
+        "**/*.css"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",

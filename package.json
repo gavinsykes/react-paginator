@@ -31,6 +31,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-storybook": "^0.8.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -41,8 +42,9 @@
   },
   "scripts": {
     "build": "vite build",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint ./src/**",
+    "lint:fix": "eslint --fix ./src/**",
+    "lint:fix:dry": "eslint --fix-dry-run ./src/**",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   }
