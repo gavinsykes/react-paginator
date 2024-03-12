@@ -1,10 +1,10 @@
-import { CSSProperties } from "react";
+import { type CSSProperties } from 'react'
 
-export const commonDefaultMaximumPreviousNext = 5;
+export const commonDefaultMaximumPreviousNext = 5
 
 type commonPreviousNextStylesParams = ({
-  flexReverse: boolean;
-}) | void;
+  flexReverse: boolean
+}) | void
 
 export const commonPreviousNextStyles: (params: commonPreviousNextStylesParams) => CSSProperties = (params) => ({
   alignItems: 'stretch',
@@ -13,7 +13,7 @@ export const commonPreviousNextStyles: (params: commonPreviousNextStylesParams) 
   flexWrap: 'wrap',
   overflow: 'hidden',
   rowGap: '9999px'
-});
+})
 
 export const commonPreviousNextAnchorStyles: CSSProperties = {
   display: 'flex',

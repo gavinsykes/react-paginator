@@ -1,3 +1,3 @@
-import { Paginator } from '@/components';
+import { Paginator } from '@/components'
 
-export default Paginator;
+export default Paginator

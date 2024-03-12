@@ -1,7 +1,7 @@
-import { SetToIndexContextProps, SetToIndexContextProviderProps } from "@/types";
-import { createContext, useContext } from "react";
+import { type SetToIndexContextProps, type SetToIndexContextProviderProps } from '@/types'
+import { createContext, useContext } from 'react'
 
-const SetToIndexContext = createContext<SetToIndexContextProps>(null!);
+const SetToIndexContext = createContext<SetToIndexContextProps>(null!)
 
 export const SetToIndexContextProvider = ({
   children,
@@ -18,10 +18,10 @@ export const SetToIndexContextProvider = ({
   {children}
 </SetToIndexContext.Provider>
 
-export function useSetToIndexContext() {
-  const context = useContext(SetToIndexContext);
+export function useSetToIndexContext () {
+  const context = useContext(SetToIndexContext)
   if (!context) {
-    throw new Error('Paginator.SetToIndex.* components must be rendered as a child of Paginator.SetToIndex');
+    throw new Error('Paginator.SetToIndex.* components must be rendered as a child of Paginator.SetToIndex')
   }
-  return context;
+  return context
 }

@@ -1,7 +1,7 @@
-import { PaginatorContextProps, PaginatorContextProviderProps } from "@/types";
-import { createContext, useContext } from "react";
+import { type PaginatorContextProps, type PaginatorContextProviderProps } from '@/types'
+import { createContext, useContext } from 'react'
 
-const PaginatorContext = createContext<PaginatorContextProps>(null!);
+const PaginatorContext = createContext<PaginatorContextProps>(null!)
 
 export const PaginatorContextProvider = ({
   allowNumberNavigation,
@@ -32,10 +32,10 @@ export const PaginatorContextProvider = ({
   {children}
 </PaginatorContext.Provider>
 
-export function usePaginatorContext() {
-  const context = useContext(PaginatorContext);
+export function usePaginatorContext () {
+  const context = useContext(PaginatorContext)
   if (!context) {
-    throw new Error('Paginator.* components must be rendered as a child of Paginator');
+    throw new Error('Paginator.* components must be rendered as a child of Paginator')
   }
-  return context;
+  return context
 }

@@ -1,17 +1,17 @@
-import { Paginator } from '@/components';
-import type { Meta, StoryObj } from '@storybook/react';
-import { ComponentProps } from 'react';
+import { Paginator } from '@/components'
+import type { Meta, StoryObj } from '@storybook/react'
+import { type ComponentProps } from 'react'
 
 type PaginatorPropsAndCustomArgs = ComponentProps<typeof Paginator> & {
-  currentPageArgs: { display: boolean } & ComponentProps<typeof Paginator.CurrentPage>;
-  nextPagesArgs: { display: boolean } & ComponentProps<typeof Paginator.NextPages>;
-  previousPagesArgs: { display: boolean } & ComponentProps<typeof Paginator.PreviousPages>;
-  setToFirstArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToFirst>;
-  setToIndexArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToIndex>;
-  setToLastArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToLast>;
-  setToNextArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToNext>;
-  setToPreviousArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToPrevious>;
-};
+  currentPageArgs: { display: boolean } & ComponentProps<typeof Paginator.CurrentPage>
+  nextPagesArgs: { display: boolean } & ComponentProps<typeof Paginator.NextPages>
+  previousPagesArgs: { display: boolean } & ComponentProps<typeof Paginator.PreviousPages>
+  setToFirstArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToFirst>
+  setToIndexArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToIndex>
+  setToLastArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToLast>
+  setToNextArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToNext>
+  setToPreviousArgs: { display: boolean } & ComponentProps<typeof Paginator.SetToPrevious>
+}
 
 const meta = {
   args: {
@@ -43,10 +43,10 @@ const meta = {
     layout: 'centered'
   },
   title: 'Paginator'
-} satisfies Meta<PaginatorPropsAndCustomArgs>;
+} satisfies Meta<PaginatorPropsAndCustomArgs>
 
-export default meta;
-type Story = StoryObj<Meta<PaginatorPropsAndCustomArgs>>;
+export default meta
+type Story = StoryObj<Meta<PaginatorPropsAndCustomArgs>>
 
 export const Primary: Story = {
   render: ({ ...args }) => <Paginator {...args}>
@@ -58,4 +58,4 @@ export const Primary: Story = {
     {args.setToNextArgs.display && <Paginator.SetToNext {...args.setToNextArgs} />}
     {args.setToLastArgs.display && <Paginator.SetToLast {...args.setToLastArgs} />}
   </Paginator>
-};
+}
