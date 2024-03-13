@@ -18,9 +18,9 @@ export const SetToIndexContextProvider = ({
   {children}
 </SetToIndexContext.Provider>
 
-export function useSetToIndexContext () {
+export function useSetToIndexContext (): SetToIndexContextProps {
   const context = useContext(SetToIndexContext)
-  if (!context) {
+  if (context === null) {
     throw new Error('Paginator.SetToIndex.* components must be rendered as a child of Paginator.SetToIndex')
   }
   return context

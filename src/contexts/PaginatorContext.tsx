@@ -34,7 +34,7 @@ export const PaginatorContextProvider = ({
 
 export function usePaginatorContext () {
   const context = useContext(PaginatorContext)
-  if (!context) {
+  if (context === null) {
     throw new Error('Paginator.* components must be rendered as a child of Paginator')
   }
   return context

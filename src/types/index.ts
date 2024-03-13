@@ -27,6 +27,10 @@ export interface PaginatorProps extends HTMLProps<HTMLDivElement> {
   totalPages: PaginatorContextProps['totalPages']
 }
 
+export interface CurrentPageProps extends HTMLProps<HTMLDivElement> {
+  render?: (index: number) => ReactNode
+}
+
 export interface PaginatorAnchorProps extends HTMLProps<HTMLAnchorElement> {
   children?: ReactNode
 }

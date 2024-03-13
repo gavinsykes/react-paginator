@@ -9,7 +9,7 @@ type commonPreviousNextStylesParams = ({
 export const commonPreviousNextStyles: (params: commonPreviousNextStylesParams) => CSSProperties = (params) => ({
   alignItems: 'stretch',
   display: 'flex',
-  flexDirection: params?.flexReverse ? 'row-reverse' : 'row',
+  flexDirection: ((params?.flexReverse) === true) ? 'row-reverse' : 'row',
   flexWrap: 'wrap',
   overflow: 'hidden',
   rowGap: '9999px'

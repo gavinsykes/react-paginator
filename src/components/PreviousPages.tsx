@@ -1,7 +1,7 @@
 import { usePaginatorContext } from '@/contexts/PaginatorContext'
 import { commonDefaultMaximumPreviousNext, commonPreviousNextAnchorStyles, commonPreviousNextStyles } from '@/properties'
 import { type CommonPreviousNextPagesProps } from '@/types'
-import { type MouseEventHandler } from 'react'
+import { type ReactElement, type MouseEventHandler } from 'react'
 import Ellipsis from './Ellipsis'
 
 export default function PreviousPages ({
@@ -9,7 +9,7 @@ export default function PreviousPages ({
   render,
   showEllipsis = true,
   ...anchorProps
-}: CommonPreviousNextPagesProps) {
+}: CommonPreviousNextPagesProps): ReactElement<HTMLDivElement> | null {
   const { allowNumberNavigation, currentPageIndex, isFirst, pageNumberOffset, setToIndex } = usePaginatorContext()
   if (isFirst) return null
   const anchors = Array.from({ length: currentPageIndex }, (_, i) => i).slice(-maximum).reverse()
@@ -21,7 +21,7 @@ export default function PreviousPages ({
     <div style={commonPreviousNextStyles({ flexReverse: true })}>
       <div></div>
       {anchors.map(anchor => <a key={anchor} onClick={onClick(anchor)} style={commonPreviousNextAnchorStyles} {...anchorProps}>
-        {render ? render(anchor + pageNumberOffset + 1) : anchor + pageNumberOffset + 1}
+        {render !== undefined ? render(anchor + pageNumberOffset + 1) : anchor + pageNumberOffset + 1}
       </a>)}
       <Ellipsis />
     </div>

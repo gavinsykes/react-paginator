@@ -1,9 +1,9 @@
 import { usePaginatorContext } from '@/contexts/PaginatorContext'
 import { SetToIndexContextProvider, useSetToIndexContext } from '@/contexts/SetToIndexContext'
 import { type SetToIndexProps, type SetToIndexInputProps, type SetToIndexSubmitProps } from '@/types'
-import { type KeyboardEventHandler, type MouseEventHandler, useRef, useState } from 'react'
+import { type KeyboardEventHandler, type MouseEventHandler, useRef, useState, type ReactElement } from 'react'
 
-export default function SetToIndex ({ children, ...divProps }: SetToIndexProps) {
+export default function SetToIndex ({ children, ...divProps }: SetToIndexProps): ReactElement<HTMLDivElement> {
   const { setToIndex, totalPages } = usePaginatorContext()
   const [targetIndex, setTargetIndex] = useState<number | undefined>(undefined)
   return (
@@ -15,13 +15,13 @@ export default function SetToIndex ({ children, ...divProps }: SetToIndexProps) 
   )
 }
 
-function SetToIndexInput ({ ...inputProps }: SetToIndexInputProps) {
+function SetToIndexInput ({ ...inputProps }: SetToIndexInputProps): ReactElement<HTMLInputElement> {
   const { pageNumberOffset, setToIndex, totalPages } = usePaginatorContext()
   const { setTargetIndex, targetIndex } = useSetToIndexContext()
-  const inputRef = useRef<HTMLInputElement>(null!)
+  const inputRef = useRef<HTMLInputElement>(null)
   const onKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key !== 'Enter') return
-    if (!inputRef.current.checkValidity() || !targetIndex) return
+    if (inputRef.current === null || !inputRef.current.checkValidity() || targetIndex === undefined) return
     setToIndex(targetIndex)
     setTargetIndex(undefined)
   }
@@ -39,7 +39,7 @@ function SetToIndexInput ({ ...inputProps }: SetToIndexInputProps) {
   )
 }
 
-function SetToIndexSubmit ({ children, ...buttonProps }: SetToIndexSubmitProps) {
+function SetToIndexSubmit ({ children, ...buttonProps }: SetToIndexSubmitProps): ReactElement<HTMLButtonElement> {
   const { setToIndex } = usePaginatorContext()
   const { targetIndex } = useSetToIndexContext()
   const onClick: MouseEventHandler<HTMLButtonElement> = e => {
